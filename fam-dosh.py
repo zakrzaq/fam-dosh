@@ -1,7 +1,17 @@
 import os
 import pandas as pd
 
-input = os.path.join('jz-pekao-cur-2023-01.csv')
+input_dir = os.path.join(os.getcwd(), 'INPUTS')
+output_dir = os.path.join(os.getcwd(), 'OUTPUTS')
+input_list = os.listdir(input_dir)
+
+print('AVAILABLE INPUTS:')
+for ind, file in enumerate(input_list):
+    print(f"{ind} - {file}")
+
+list_choice = int(input('\nSelect file by number: \n'))
+
+input = os.path.join(input_dir, input_list[list_choice])
 
 df = pd.read_csv(input, sep=';')
 
@@ -14,5 +24,5 @@ df = df[['Numer referencyjny', 'Data księgowania', 'Nadawca / Odbiorca', 'Adres
 print(df.columns)
 print(df.head(10))
 
-output = input[:-4] + '.xlsx'
+output = input.replace('INPUTS', 'OUTPUTS').replace('.csv', '.xlsx')
 df.to_excel(output ,header=False, index=False)

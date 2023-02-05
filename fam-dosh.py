@@ -36,7 +36,7 @@ else:
     print('Input not yet supported')
 
 print(df.columns)
-print(df.head(10))
+print(df.head())
 
 # SAVE
 output = input.replace('INPUTS', 'OUTPUTS').replace('.csv', '.xlsx')

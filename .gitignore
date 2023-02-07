@@ -3,3 +3,5 @@ OUTPUTS/
 .~lock
 .null-ls_*.py
 .env/
+__pychache__
+.vscode

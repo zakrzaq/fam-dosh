@@ -1,4 +1,8 @@
-def handle_pekao(df):
+def handle_pekao(input_file):
+    import pandas as pd  # type: ignore
+    
+    df = pd.read_csv(input_file, sep=";")
+    
     df = df.drop(
         [
             "Data waluty",

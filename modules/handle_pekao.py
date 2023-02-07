@@ -26,4 +26,6 @@ def handle_pekao(df):
         ]
     ]
 
+    df.columns = ["id", "date", "receiver", "address", "title", "amount", "category"]
+
     return df
